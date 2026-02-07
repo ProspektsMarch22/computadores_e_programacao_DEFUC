@@ -6,11 +6,13 @@
 #    By: icezar-s <icezar-s@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/07 14:08:10 by icezar-s          #+#    #+#              #
-#    Updated: 2026/02/07 14:15:26 by icezar-s         ###   ########.fr        #
+#    Updated: 2026/02/07 14:55:26 by icezar-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 def fatorial(n):
+    if (n == 0):
+        return (1)
     fat = n;
     while ( n > 1 ):
         n -= 1

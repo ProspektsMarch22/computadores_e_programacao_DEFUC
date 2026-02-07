@@ -1,31 +1,38 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    1.py                                               :+:      :+:    :+:    #
+#    3.py                                               :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: icezar-s <icezar-s@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/02/07 14:31:25 by icezar-s          #+#    #+#              #
-#    Updated: 2026/02/07 14:54:11 by icezar-s         ###   ########.fr        #
+#    Created: 2026/02/07 14:48:45 by icezar-s          #+#    #+#              #
+#    Updated: 2026/02/07 14:56:28 by icezar-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-def somatorio(N, a):
+def fatorial(n):
+    if (n == 0):
+        return (1)
+    fat = n;
+    while (n > 1):
+        n -= 1
+        fat *= n
+    return (fat)
+
+def somatorio(N, x):
     soma = 0
     n = 0
     while (n <= N):
-        soma += (a**n)
+        soma += ((x ** n)/(fatorial(n)))
         n += 1
     return (soma)
 
 def main():
-    a = float(input("Indique 'a'.\n Lembrando que -1 < a < 1: "))
-    N = int(input("Indique 'N'.\n Aproxime 'N' o máximo que conseguir de INT_MAX: "))
-    print("Se voce por um numero muito grande o programa vai demorar a executar mesmo.")
+    N = int(input("Defina 'N': "))
+    x = float(input("Defina 'x': "))
     #Você pode remover a parte entre o sinal de '=' e '%' caso queira a resposta inteira
-    soma = "%.2f" % somatorio(N, a)
+    soma = "%.2f" % somatorio(N, x)
     print(soma)
-    return
 
 if __name__ == '__main__':
     main()
