@@ -1,14 +1,18 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    3.py                                               :+:      :+:    :+:    #
+#    4.py                                               :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: icezar-s <icezar-s@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/02/07 14:48:45 by icezar-s          #+#    #+#              #
-#    Updated: 2026/02/07 15:03:15 by icezar-s         ###   ########.fr        #
+#    Created: 2026/02/07 15:01:20 by icezar-s          #+#    #+#              #
+#    Updated: 2026/02/07 15:19:18 by icezar-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+
+#A esse ponto você já percebeu que estamos usando várias vezes a função "fatorial(n)".
+#E se tivesse um jeito de ->importar<- essa função de um outro arquivo?
 
 def fatorial(n):
     if (n == 0):
@@ -20,18 +24,17 @@ def fatorial(n):
     return (fat)
 
 def somatorio(N, x):
-    soma = 0
     n = 0
+    soma = 0
     while (n <= N):
-        soma += ((x ** n)/(fatorial(n)))
+        soma += (((-1) ** n) * (x ** ((2 * n) + 1)))/(fatorial((2 * n) + 1))
         n += 1
     return (soma)
 
 def main():
-    N = int(input("Defina 'N': "))
+    N = int(input("Defina 'N'\n Pelo o amor de deus coloque N entre 1 e 10 senao o computador explode: "))
     x = float(input("Defina 'x': "))
-    #Você pode remover a parte entre o sinal de '=' e '%' caso queira a resposta inteira
-    soma = "%.2f" % somatorio(N, x)
+    soma = somatorio(N, x)
     print(soma)
 
 if __name__ == '__main__':
